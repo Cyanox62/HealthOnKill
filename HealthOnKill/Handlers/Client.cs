@@ -27,10 +27,17 @@ namespace HealthOnKill.Handlers
                 }
 				else if (ev.Killer.Role == RoleType.Scp0492)
 				{
-                    int health = HealthOnKill.instance.Config.isHealthRegenRandom ?
-						(int)ev.Killer.Health + Random.Range(HealthOnKill.instance.Config.scp0492HealthOnKillRandomLowerBounds, HealthOnKill.instance.Config.scp0492HealthOnKillRandomUpperBounds) :
-						(int)ev.Killer.Health + HealthOnKill.instance.Config.scp0492HealthOnKillSet;
-                    ev.Killer.Health = Mathf.Clamp(health, 0f, ev.Killer.MaxHealth);
+                    if (ev.Killer.SessionVariables.ContainsKey("is966") && (bool)ev.Killer.SessionVariables["is966"])
+                    {
+                        ev.Killer.Health = Mathf.Clamp(ev.Killer.Health + 15, 0f, ev.Killer.MaxHealth);
+                    }
+                    else
+                    {
+                        int health = HealthOnKill.instance.Config.isHealthRegenRandom ?
+                            (int)ev.Killer.Health + Random.Range(HealthOnKill.instance.Config.scp0492HealthOnKillRandomLowerBounds, HealthOnKill.instance.Config.scp0492HealthOnKillRandomUpperBounds) :
+                            (int)ev.Killer.Health + HealthOnKill.instance.Config.scp0492HealthOnKillSet;
+                        ev.Killer.Health = Mathf.Clamp(health, 0f, ev.Killer.MaxHealth);
+                    }
                 }
 				else if (ev.Killer.Role == RoleType.Scp106 && Warhead.IsDetonated)
 				{

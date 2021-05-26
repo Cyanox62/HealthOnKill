@@ -89,3 +89,4 @@ C:\Users\Infer\Source\Repos\HealthOnKill\HealthOnKill\bin\Debug\UnityEngine.Inpu
 C:\Users\Infer\Source\Repos\HealthOnKill\HealthOnKill\bin\Debug\Exiled.API.dll
 C:\Users\Infer\Source\Repos\HealthOnKill\HealthOnKill\bin\Debug\Exiled.Events.dll
 C:\Users\Infer\Source\Repos\HealthOnKill\HealthOnKill\bin\Debug\Exiled.Loader.dll
+C:\Users\Infer\source\repos\HealthOnKill\HealthOnKill\bin\Debug\0Harmony.dll
